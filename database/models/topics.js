@@ -19,7 +19,10 @@ var SourceSchema = new mongoose.Schema({
 });
 
 var TopicSchema = new mongoose.Schema({
-    topic: {type: String, required: true},
+    topic: {
+        type: String,
+        required: true
+    },
     sources: [SourceSchema]
 });
 
