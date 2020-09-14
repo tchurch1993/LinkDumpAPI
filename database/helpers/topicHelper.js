@@ -4,7 +4,7 @@ module.exports = class Topic {
 
         static addTopic(topicName, sourceList, callback) {
             try {
-                    this.getTopic(topicName, doc => {
+                    this.getSources(topicName, doc => {
                         if(!doc){
                             var newTopic = new TopicModel({
                                 topic: topicName,
@@ -31,7 +31,7 @@ module.exports = class Topic {
             }
         }
 
-        static getTopic(topicName, callback) {
+        static getSources(topicName, callback) {
             try {
                 TopicModel.findOne()
                     .where("topic").equals(topicName)
